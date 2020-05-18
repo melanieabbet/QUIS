@@ -1,0 +1,344 @@
+.video-container {
+ display: table-cell;
+ margin-bottom:20px;
+}
+.local-c{
+  border-left: none;
+}
+#remote-video {
+ background-color: #fff;
+}
+#local-video {
+ background-color: #fff;
+}
+#input-control{
+  width: 2000px;
+  margin-bottom:20px;
+}
+#nav-bar{
+  height: 75px;
+  background-color: #e40b1f!important
+}
+#one-Label{
+}
+.current-badge{
+  background-color: #e40b1f!important;
+  border-width: 0px;
+  color:white;
+}
+.botton-badge{
+  border-radius: 30px;
+  line-height:30px;
+  width: 200px;
+  cursor: pointer;
+}
+.location-badge{
+    border-color: #e40b1f!important;
+    display:table-cell;
+    font-size: 20px;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    line-height:30px;
+}
+.non-current-badge{
+  background-color: #ffffff;
+  border-width: 0.5px;
+  color:#e40b1f;
+}
+.left-side{
+  display: table-cell;
+  align-content: center;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.right-side{
+  display: table-cell;
+  align-content: center;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.content-container{
+  display: table-cell;
+  max-width: 600px;
+}
+.list{
+  display: none;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0px;
+  overflow:hidden;
+  max-height:200px;
+  overflow-y:scroll;
+}
+.list::-webkit-scrollbar {
+   display: none;
+ }
+ .list {
+   -ms-overflow-style: none;
+ }
+.list li{
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px;
+  color: #e40b1f;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-color: #f5ab93;
+  border-bottom-style: solid;
+}
+.badge-input{
+  display: none;
+}
+.input-badge input{
+ display: table-cell;
+  width: 100%;
+  border: none;
+  text-align: center;
+  color: #e40b1f;
+}
+#username-ok-holder{
+ display: none;
+ width: 100%;
+ font-size: 20px;
+ width: 200px;
+ height: 60px;
+ background-color: white;
+ border-color: #e40b1f;
+ border-style: solid;
+ border-width: 1px;
+ color: #e40b1f;
+ text-align: center;
+ border-radius: 30px;
+}
+.content-container{
+  display:none;
+  padding-left:10px;
+  padding-right:10px;
+}
+#current-location{
+  justify-content: center;
+  display: flex;
+}
+hr.new1 {
+   border-top: 1px solid red;
+   line-height: 100px;
+   width: 500px;
+}
+#alert_bad_language{
+  width: auto;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+}
+#image-bg{
+  max-height: 430px;
+  display: table-row;
+  display: flex;
+  align-content: center;
+}
+#image-holder button{
+  margin-top: 50px;
+  display: table-row;
+  width: 100%;
+  display: none;
+}
+#image-holder{
+  display: table-cell;
+}
+.container h1{
+  text-align: center;
+  margin-top: 100px;
+}
+.div-hidden{
+ display: none;
+ padding-top: 30px;
+ background-color: white;
+ padding-left: 5%;
+ padding-right: 5%;
+ width:100%;
+}
+.div-hidden div{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.div-hidden a:hover{
+  color: white;
+  text-decoration: none;
+}
+.div-hidden a{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.div-hidden span{
+  color:#e40b1f;
+  margin-bottom: 20px;
+}
+#button-share{
+  margin-top: 20px;
+    margin-bottom: 20px;
+}
+.about{
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  width: 150px;
+  height: 75px;
+  right: 0;
+  margin-right: 50px;
+  position: absolute;
+  background-color: #e40b1f;
+}
+#searching-div{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+#searching-div img{
+  width: 300px;
+  display: none;
+}
+#game-div{
+  display: none;
+}
+#game-div-holder{
+  display: flex;
+  justify-content: center;
+}
+#game-div .video-container video{
+  border: 1px #e40b1f solid;
+  width: 700px;
+}
+#game-div .video-container{
+  margin-top: 50px;
+}
+#game-div #validate-div{
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+#game-div #validate-div div{
+  width: 300px;
+  margin-right: 20px;
+}
+#validate-button{
+  width: 100%;
+  font-size: 20px;
+  width: 200px;
+  height: 60px;
+  background-color: #e40b1f;
+  border-color: #e40b1f;
+  border-style: solid;
+  border-width: 1px;
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.text-video{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    border-bottom-left-radius: 75px;
+    border-bottom-right-radius: 75px;
+    width: 150px;
+    height: 75px;
+    margin-right: 50px;
+    position: absolute;
+    background-color: #e40b1f;
+}
+#replay-div-holder{
+  display:none;
+}
+#replay-div{
+    display: flex;
+    justify-content: center;
+}
+#replay-div button{
+  width:200px;
+  font-size: 20px;
+  height: 60px;
+  border-color: #e40b1f;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  border-radius: 30px;
+}
+#replay-div div{
+  width: 50px;
+}
+#replay-div #replay{
+  background-color: #e40b1f;
+  color: white;
+}
+#replay-div #newpartner{
+background-color: #ffffff;
+color: #e40b1f;
+}
+#small_cow{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -200px;
+  position: sticky;
+  top: 0;
+}
+#small_cow img{
+  height: 300px;
+}
+.text-video-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #e40b1f;
+  font-size: 14px;
+  width: auto;
+  height: 50px;
+  margin-top: -56px;
+  position: absolute;
+  background-color: white;
+}
+.text-video-bottom #found-div{
+      display: none;
+      background-color: black;
+      height: 100%;
+      line-height: 50px;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+}
+.text-video-bottom #nom-div{
+      padding-left: 20px;
+      padding-right: 20px;
+}
+.mask-holder{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: -400px;
+}
+#masque{
+  width: 40%;
+}
+#masque-r{
+  width: 40%;
+}
+#replay-div-holder h2{
+    text-align: center;
+    margin-bottom: 40px;
+}

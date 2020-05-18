@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <title>duo</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <link
+     href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+     rel="stylesheet"
+   />
+   <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+   <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+   <link
+     href="/css/index.css"
+     rel="stylesheet"
+   />
+ </head>
+ <body>
+   <div class="nav-holder">
+    <div class="div-hidden" >
+      <div>
+      <h1>QUIS?</h1>
+    </div>
+      <h4>
+        <b>
+        QUIS match you with a native speaker of the language you want to practice.<br/>
+        Then one after the other ask questions to guess which animal you are!<br/>
+        Try to speak as much as possible in the foreign language, avoid English.
+        Correct and help your partner, you are both here to learn!<br/>
+        Have fun!<br/>
+        <br/>
+        <br/>
+      </b>
+        </h4>
+        <span>This wbpage is a simple version of the application Quis, a project developped for my BA thesis.<br/>In order to help me improve this project, please share with me your experience on QUIS</span>
+        <br/>
+        <br/>
+      <a HREF="mailto:melanieabbet97@gmail.com" class="alert alert-danger botton-badge current-badge" role="alert" id="button-share">Share experience</a>
+      <br/>
+      <br/>
+    </div>
+   <nav class="navbar navbar-dark bg-danger" id="nav-bar">
+  <!-- Navbar content -->
+
+</nav>
+<div>
+<div class="about" onclick="showQuis()">
+  About
+</div>
+
+</div>
+</div>
+
+   </div>
+   <div class="container">
+     <header class="header">
+       <div class="logo-container">
+         <h1 class="logo-text">
+           <span class="logo-highlight"></span>
+         </h1>
+       </div>
+     </header>
+     <span id="error"></span>
+     <h1>QUIS?</h1>
+     <div id="current-location">
+       <div class="alert alert-danger location-badge non-current-badge" id="badge-1" role="alert">1</div>
+       <div style="display:table-cell;"><hr class="new1"/></div>
+       <div class="alert alert-danger location-badge non-current-badge" id="badge-2" role="alert">2</div>
+     </div>
+     <div style="display: flex;justify-content: center;" id="main-div">
+     <div class="left-side">
+     <h2>Settings</h2>
+     <div class="alert alert-danger botton-badge non-current-badge" role="alert" id="button-langue" onclick="changeLangue(this)">Mother Tongue</div>
+     <ul id="list-languges-l" class="list">
+       <li onclick="selectLanguage('French')">French</li>
+       <li onclick="selectLanguage('Italian')">Italian</li>
+       <li onclick="selectLanguage('German')">German</li>
+    </ul>
+     <div class="alert alert-danger botton-badge non-current-badge" role="alert" id="button-place" onclick="changePlace(this)">Place</div>
+     <ul id="list-places-l" class="list">
+       <li onclick="selectPlace('ZH')">ZH</li>
+       <li onclick="selectPlace('BE')">BE</li>
+       <li onclick="selectPlace('LU')">LU</li>
+       <li onclick="selectPlace('UR')">UR</li>
+       <li onclick="selectPlace('SZ')">SZ</li>
+       <li onclick="selectPlace('OW')">OW</li>
+       <li onclick="selectPlace('NW')">NW</li>
+       <li onclick="selectPlace('GL')">GL</li>
+       <li onclick="selectPlace('ZG')">ZG</li>
+       <li onclick="selectPlace('FR')">FR</li>
+       <li onclick="selectPlace('SO')">SO</li>
+       <li onclick="selectPlace('BS')">BS</li>
+       <li onclick="selectPlace('BL')">BL</li>
+       <li onclick="selectPlace('SH')">SH</li>
+       <li onclick="selectPlace('AR')">AR</li>
+       <li onclick="selectPlace('AI')">AI</li>
+       <li onclick="selectPlace('SG')">SG</li>
+       <li onclick="selectPlace('GR')">GR</li>
+       <li onclick="selectPlace('AG')">AG</li>
+       <li onclick="selectPlace('TG')">TG</li>
+       <li onclick="selectPlace('TI')">TI</li>
+       <li onclick="selectPlace('VD')">VD</li>
+       <li onclick="selectPlace('VS')">VS</li>
+       <li onclick="selectPlace('NE')">NE</li>
+       <li onclick="selectPlace('GE')">GE</li>
+       <li onclick="selectPlace('JU')">JU</li>
+    </ul>
+     <div class="alert alert-danger botton-badge non-current-badge" role="alert" id="button-username" onclick="changeName(this)">Name</div>
+     <div class="alert alert-danger botton-badge non-current-badge badge-input input-badge" id="username-holder" role="alert">
+      <input type="text" id="username"/>
+    </div>
+     <button type="button" class="btn btn-danger" id="username-ok-holder" onclick="selectName()">OK</button>
+    </div>
+    <div id="image-holder">
+    <img src="/Mascot_A.png"  id="image-bg"/>
+    <button type="button" class="btn btn-danger" id="play-button" onclick="play()">Play</button>
+   </div>
+     <div class="right-side">
+     <h2>Practice</h2>
+     <div class="alert alert-danger botton-badge non-current-badge" role="alert" id="button-langue-w" onclick="changeLangueW(this)">Language</div>
+     <ul id="list-languges-l-w" class="list">
+       <li onclick="selectLanguageW('French')">French</li>
+       <li onclick="selectLanguageW('Italian')">Italian</li>
+       <li onclick="selectLanguageW('German')">German</li>
+    </ul>
+    <div class="alert alert-danger botton-badge non-current-badge" role="alert" id="button-level" onclick="changeLevel(this)">Level</div>
+    <ul id="list-levels" class="list">
+      <li onclick="selectLevel('A1-A2')">A1-A2</li>
+      <li onclick="selectLevel('B1-B2')">B1-B2</li>
+      <li onclick="selectLevel('C1-C2')">C1-C2</li>
+   </ul>
+   </div>
+ </div>
+ <div id="searching-div">
+   <img src="/Mascot_R.png" />
+ </div>
+ <div id="game-div">
+   <div id="game-div-holder">
+   <div class="video-container remote-c">
+     <div class="text-video text-video-left" id="remote-word" onclick="">
+        About
+      </div>
+     <video class="remote-video" id="remote-video" autoplay></video>
+     <div class="mask-holder">
+     <img id="masque" src="">
+    </div>
+     <div class="text-video-bottom" onclick="">
+        <div id="nom-div"><span>Laura</span></div>
+        <div id="found-div"><span>Found Answer</span></div>
+      </div>
+  </div>
+  <div class="video-container local-c">
+    <div class="text-video text-video-right" id="local-post" onclick="">
+       Who am i?
+     </div>
+     <video  muted class="local-video" id="local-video" autoplay></video>
+     <div class="mask-holder">
+     <img id="masque-r" src="question.png">
+    </div>
+     <div id="small_cow">
+     <img src="/Mascot_R.png"  />
+    </div>
+   </div>
+
+ </div>
+ <div id="validate-div">
+   <div class="alert alert-danger botton-badge non-current-badge input-badge">
+      <input type="text" id="message" placeholder="text"/>
+   </div>
+   <button type="button" class="btn btn-danger" id="validate-button" onclick="sendText()">Validate</button>
+  </div>
+  <div id="replay-div-holder">
+    <h2>Well Done</h2>
+    <div id="replay-div">
+    <button type="button" class="btn btn-danger" id="replay" onclick="restartGame()">Replay</button>
+    <div></div>
+    <button type="button" class="btn btn-danger" id="newpartner" onclick="searchAnother()">New partner</button>
+    </div>
+  </div>
+</div>
+   <div class="alert alert-danger" role="alert" id="alert_bad_language">
+      Choose another language
+    </div>
+    <div class="content-container">
+      <div class="active-users-panel" id="active-user-container">
+        <h3 class="panel-title">Active Users:</h3>
+      </div>
+      <div class="video-chat-container">
+        <h2 class="talk-info" id="talking-with-info">
+          Select active user on the left menu.
+        </h2>
+
+
+        <span id="text-recieved"></span>
+        <div>
+        <br/>
+        <div id="poster-container">
+          <span class="lg"></span>
+          <span class="lg"></span>
+        </div>
+
+
+        </div>
+      </div>
+
+    </div>
+   <script src="./scripts/index.js"></script>
+ </body>
+</html>

@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   user     : 'root',//
   password : 'Melanie_2',
   database : 'test1',
-  port: "8889"
+  port: "3306"
 });
 exports.runSql = function(sql,callback){//callback is your custom function that you define whenever you want to run a sql so that gives you more freedom on what you want to do with the results
   connection.query(sql, function (error, results, fields) {

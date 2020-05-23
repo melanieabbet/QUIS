@@ -1,8 +1,8 @@
 const mysql      = require('mysql');//import mysql library
 const connection = mysql.createConnection({
   host     : '127.0.0.1',//change ici peut etre
-  user     : 'Melanie',//
-  password : 'qweewq',
+  user     : 'root',//
+  password : 'Melanie_2',
   database : 'test1',
   port: "8889"
 });

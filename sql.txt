@@ -1,0 +1,395 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:8889
+-- Généré le :  sam. 23 mai 2020 à 12:16
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `test1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+CREATE TABLE `images` (
+  `Id` int(11) NOT NULL,
+  `URL` varchar(500) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image_mot`
+--
+
+CREATE TABLE `image_mot` (
+  `Id` int(11) NOT NULL,
+  `Id_mot` int(11) NOT NULL,
+  `Id_Image` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `indice`
+--
+
+CREATE TABLE `indice` (
+  `Id` int(11) NOT NULL,
+  `Id_mot` int(11) NOT NULL,
+  `Indice` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `langues`
+--
+
+CREATE TABLE `langues` (
+  `Id` int(11) NOT NULL,
+  `nom_langue` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `langues`
+--
+
+INSERT INTO `langues` (`Id`, `nom_langue`) VALUES
+(1, 'French'),
+(2, 'Italian'),
+(3, 'German');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `matching`
+--
+
+CREATE TABLE `matching` (
+  `Id` int(11) NOT NULL,
+  `queue_ID` int(11) NOT NULL,
+  `user_ID` int(11) NOT NULL,
+  `active` bit(1) NOT NULL,
+  `input_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `matching`
+--
+
+INSERT INTO `matching` (`Id`, `queue_ID`, `user_ID`, `active`, `input_date`) VALUES
+(1, 2, 1, b'0', '2020-05-05 00:00:00'),
+(3, 2, 1, b'0', '2020-05-05 00:00:00'),
+(5, 4, 2, b'0', '2020-05-05 20:00:35'),
+(6, 1, 3, b'0', '2020-05-05 20:11:17'),
+(22, 1, 3, b'0', '2020-05-06 19:25:11'),
+(21, 1, 1, b'0', '2020-05-06 18:50:37'),
+(19, 4, 2, b'0', '2020-05-06 18:40:40'),
+(23, 1, 1, b'0', '2020-05-14 21:20:46'),
+(24, 4, 2, b'0', '2020-05-14 21:20:48'),
+(25, 4, 2, b'0', '2020-05-14 21:23:53'),
+(26, 1, 1, b'0', '2020-05-14 21:25:57'),
+(27, 4, 2, b'0', '2020-05-14 21:25:59'),
+(28, 4, 2, b'0', '2020-05-14 21:32:03'),
+(29, 1, 1, b'0', '2020-05-14 21:32:05'),
+(30, 1, 1, b'0', '2020-05-14 21:32:41'),
+(31, 4, 2, b'0', '2020-05-14 21:32:43'),
+(32, 1, 1, b'0', '2020-05-14 21:41:56'),
+(33, 4, 2, b'0', '2020-05-14 21:41:59'),
+(34, 1, 1, b'0', '2020-05-14 21:43:10'),
+(35, 4, 2, b'0', '2020-05-14 21:43:15'),
+(36, 1, 1, b'0', '2020-05-14 21:45:00'),
+(37, 4, 2, b'0', '2020-05-14 21:45:04'),
+(38, 1, 1, b'0', '2020-05-14 21:48:15'),
+(39, 4, 2, b'0', '2020-05-14 21:48:18'),
+(40, 1, 3, b'0', '2020-05-14 21:50:49'),
+(41, 1, 1, b'0', '2020-05-16 15:04:26'),
+(42, 4, 2, b'0', '2020-05-16 15:04:36'),
+(43, 4, 2, b'0', '2020-05-16 15:11:48'),
+(44, 4, 2, b'0', '2020-05-16 15:14:40'),
+(45, 1, 1, b'0', '2020-05-16 15:17:30'),
+(46, 4, 4, b'0', '2020-05-16 15:17:45'),
+(47, 1, 1, b'0', '2020-05-16 15:19:49'),
+(48, 4, 2, b'0', '2020-05-16 15:19:52'),
+(49, 4, 4, b'0', '2020-05-16 15:20:15'),
+(50, 1, 3, b'0', '2020-05-16 15:20:18'),
+(51, 1, 1, b'0', '2020-05-16 15:22:49'),
+(52, 4, 2, b'0', '2020-05-16 15:22:51'),
+(53, 4, 4, b'0', '2020-05-16 15:23:07'),
+(54, 1, 3, b'0', '2020-05-16 15:23:10'),
+(55, 4, 2, b'0', '2020-05-16 15:30:40'),
+(56, 1, 3, b'0', '2020-05-16 15:30:55'),
+(57, 1, 1, b'0', '2020-05-16 15:32:03'),
+(58, 4, 2, b'0', '2020-05-16 15:32:06'),
+(59, 4, 4, b'0', '2020-05-16 15:32:18'),
+(60, 1, 3, b'0', '2020-05-16 15:32:23'),
+(61, 1, 1, b'0', '2020-05-16 15:34:25'),
+(62, 4, 2, b'0', '2020-05-16 15:34:27'),
+(63, 4, 2, b'0', '2020-05-16 15:36:59'),
+(64, 4, 2, b'0', '2020-05-16 15:40:12'),
+(65, 4, 4, b'0', '2020-05-16 15:41:23'),
+(66, 1, 3, b'0', '2020-05-16 15:41:25'),
+(67, 1, 1, b'0', '2020-05-16 15:47:47'),
+(68, 4, 2, b'0', '2020-05-16 15:47:50'),
+(69, 4, 4, b'0', '2020-05-16 15:48:50'),
+(70, 1, 3, b'0', '2020-05-16 15:48:59'),
+(71, 1, 1, b'0', '2020-05-16 15:51:25'),
+(72, 4, 2, b'0', '2020-05-16 15:51:27'),
+(73, 4, 4, b'0', '2020-05-16 15:51:49'),
+(74, 1, 3, b'0', '2020-05-16 15:51:50'),
+(75, 1, 1, b'0', '2020-05-16 15:53:26'),
+(76, 4, 2, b'0', '2020-05-16 15:53:29'),
+(77, 4, 4, b'0', '2020-05-16 15:53:47'),
+(78, 1, 3, b'0', '2020-05-16 15:53:49'),
+(79, 1, 1, b'0', '2020-05-16 15:55:22'),
+(80, 4, 2, b'0', '2020-05-16 15:55:24'),
+(81, 1, 3, b'0', '2020-05-16 15:56:45'),
+(82, 4, 4, b'0', '2020-05-16 15:56:57'),
+(83, 1, 3, b'0', '2020-05-16 15:57:25'),
+(84, 4, 4, b'0', '2020-05-16 15:57:33'),
+(85, 1, 3, b'0', '2020-05-16 15:57:34'),
+(86, 4, 4, b'0', '2020-05-16 15:57:43'),
+(87, 1, 3, b'0', '2020-05-16 15:57:46'),
+(88, 4, 4, b'0', '2020-05-16 16:00:49'),
+(89, 1, 3, b'0', '2020-05-16 16:00:52'),
+(90, 1, 3, b'0', '2020-05-16 16:01:08'),
+(91, 4, 4, b'0', '2020-05-16 16:01:10'),
+(92, 1, 3, b'0', '2020-05-16 16:01:20'),
+(93, 4, 4, b'0', '2020-05-16 16:01:21'),
+(94, 4, 4, b'0', '2020-05-16 16:02:18'),
+(95, 1, 3, b'0', '2020-05-16 16:02:29'),
+(96, 4, 4, b'0', '2020-05-16 16:03:08'),
+(97, 1, 3, b'0', '2020-05-16 16:03:09'),
+(98, 4, 4, b'0', '2020-05-16 16:06:29'),
+(99, 1, 3, b'0', '2020-05-16 16:06:31'),
+(100, 4, 4, b'0', '2020-05-16 16:07:13'),
+(101, 1, 3, b'0', '2020-05-16 16:07:14'),
+(102, 4, 4, b'0', '2020-05-16 16:07:22'),
+(103, 1, 3, b'0', '2020-05-16 16:07:24'),
+(104, 4, 4, b'0', '2020-05-16 16:09:16'),
+(105, 1, 3, b'0', '2020-05-16 16:09:19'),
+(106, 4, 4, b'0', '2020-05-16 16:13:16'),
+(107, 1, 3, b'0', '2020-05-16 16:13:18'),
+(108, 4, 4, b'0', '2020-05-16 16:18:23'),
+(109, 1, 3, b'0', '2020-05-16 16:18:27'),
+(110, 1, 3, b'0', '2020-05-16 16:19:14'),
+(111, 4, 4, b'0', '2020-05-16 16:19:16'),
+(112, 1, 3, b'0', '2020-05-16 16:19:24'),
+(113, 4, 4, b'0', '2020-05-16 16:19:25'),
+(114, 1, 3, b'0', '2020-05-16 16:19:36'),
+(115, 4, 4, b'0', '2020-05-16 16:19:38'),
+(116, 4, 4, b'0', '2020-05-16 16:19:45'),
+(117, 1, 3, b'0', '2020-05-16 16:19:46'),
+(118, 1, 3, b'0', '2020-05-16 16:19:53'),
+(119, 4, 4, b'0', '2020-05-16 16:19:55'),
+(120, 4, 4, b'0', '2020-05-16 16:26:14'),
+(121, 1, 3, b'0', '2020-05-16 16:26:22'),
+(122, 1, 3, b'0', '2020-05-16 16:26:36'),
+(123, 4, 4, b'0', '2020-05-16 16:26:37'),
+(124, 1, 3, b'0', '2020-05-16 16:26:50'),
+(125, 4, 4, b'0', '2020-05-16 16:26:53'),
+(126, 1, 1, b'0', '2020-05-16 16:27:49'),
+(127, 4, 2, b'0', '2020-05-16 16:27:57'),
+(128, 6, 5, b'0', '2020-05-18 20:56:15'),
+(129, 6, 5, b'0', '2020-05-18 20:57:22'),
+(130, 3, 6, b'0', '2020-05-18 20:57:42'),
+(131, 6, 5, b'0', '2020-05-18 20:59:24'),
+(132, 3, 6, b'0', '2020-05-18 20:59:27'),
+(133, 6, 5, b'0', '2020-05-18 21:00:40'),
+(134, 3, 6, b'0', '2020-05-18 21:00:47'),
+(135, 5, 7, b'0', '2020-05-18 21:02:26'),
+(136, 2, 5, b'0', '2020-05-18 21:02:35'),
+(137, 5, 7, b'0', '2020-05-18 21:03:32'),
+(138, 2, 5, b'0', '2020-05-18 21:03:38');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mots`
+--
+
+CREATE TABLE `mots` (
+  `Id` int(11) NOT NULL,
+  `Mot` varchar(50) NOT NULL,
+  `Description` varchar(100) NOT NULL,
+  `Mot_FR` varchar(50) NOT NULL,
+  `Mot_IT` varchar(50) NOT NULL,
+  `Mot_DE` varchar(50) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `mots`
+--
+
+INSERT INTO `mots` (`Id`, `Mot`, `Description`, `Mot_FR`, `Mot_IT`, `Mot_DE`, `image`) VALUES
+(1, 'Rabbit', '', 'Lapin', 'Coniglio', 'Kaninchen', 'Lapin_Masque.png'),
+(2, 'Horse', '', 'Cheval', 'Cavallo', 'Pferd', 'Cheval_Masque.png'),
+(3, 'Dog', '', 'Chien', 'Cane', 'Hund', 'Chien_Masque.png');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `queue`
+--
+
+CREATE TABLE `queue` (
+  `Id` int(11) NOT NULL,
+  `Id_Languge1` int(11) NOT NULL,
+  `Id_Languge2` int(11) NOT NULL,
+  `joint` varchar(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `queue`
+--
+
+INSERT INTO `queue` (`Id`, `Id_Languge1`, `Id_Languge2`, `joint`) VALUES
+(1, 1, 2, '1-2'),
+(2, 1, 3, '1-3'),
+(3, 2, 3, '3-2'),
+(4, 2, 1, '1-2'),
+(5, 3, 1, '1-3'),
+(6, 3, 2, '3-2');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `Id` int(11) NOT NULL,
+  `Nom` varchar(50) NOT NULL,
+  `Prenom` varchar(50) NOT NULL,
+  `Id_languge` int(11) DEFAULT NULL,
+  `username` text
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`Id`, `Nom`, `Prenom`, `Id_languge`, `username`) VALUES
+(1, 'Mélanie', 'Abbet', 1, 'MAbbet'),
+(2, 'Jonathan', 'Maatouk', 2, 'JMaatouk'),
+(3, 'Jon', 'Doe', 1, 'JDoe'),
+(4, 'Jean', 'Charles', 2, 'Charles'),
+(5, '', '', 1, 'hallo'),
+(6, '', '', 2, 'lala'),
+(7, '', '', 3, 'JaneL');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `image_mot`
+--
+ALTER TABLE `image_mot`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `indice`
+--
+ALTER TABLE `indice`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `langues`
+--
+ALTER TABLE `langues`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `matching`
+--
+ALTER TABLE `matching`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `mots`
+--
+ALTER TABLE `mots`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `queue`
+--
+ALTER TABLE `queue`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `images`
+--
+ALTER TABLE `images`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `image_mot`
+--
+ALTER TABLE `image_mot`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `indice`
+--
+ALTER TABLE `indice`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `langues`
+--
+ALTER TABLE `langues`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `matching`
+--
+ALTER TABLE `matching`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+
+--
+-- AUTO_INCREMENT pour la table `mots`
+--
+ALTER TABLE `mots`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `queue`
+--
+ALTER TABLE `queue`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+

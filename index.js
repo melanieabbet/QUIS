@@ -1,7 +1,7 @@
 const express = require('express'); //A framework for web application
 const httpServer = require('http').createServer();//A bassic http server to be used with socket.io
 const io = require('socket.io')(httpServer);//the socket framework to enable RTC over http connection
-const DEFAULT_PORT = 1200
+const DEFAULT_PORT = 80
 const io_func = require('./Scripts/socket.io.js');
 const mysql_func = require('./Scripts/mysql.js');
 var app = express();

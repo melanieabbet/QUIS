@@ -31,7 +31,7 @@ function error(err) {
     console.warn('Error', err);
 }
 
-var socket = io('http://127.0.0.1:3000');//changer ça ici en local
+var socket = io('http://quisetia.ch:3000');//changer ça ici en local
 socket.on('connect', function(){
   console.log("connect")
   socket.emit('infoUser', {username:getCookie("username")});
@@ -44,7 +44,7 @@ socket.on('user_discovery',function(data){
   connected_user = data.otherusername
   $("#nom-div span").html(connected_user);
     peer = new Peer(getCookie("username"), {
-     host: '127.0.0.1',
+     host: 'quisetia.ch',
      port: 9000,
      path: '/myapp'
     });

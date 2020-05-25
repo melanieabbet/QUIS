@@ -1,8 +1,12 @@
 const express = require('express'); //A framework for web application
 const fs = require('fs');
 const options = {
-key: fs.readFileSync("./keys/private_key.txt"),
-cert: fs.readFileSync("./keys/Certificate.txt")
+cert: fs.readFileSync("./keys/Certificate-pub.txt"),
+ca: fs.readFileSync("./keys/CertificateChain-pub.txt"),
+rejectUnauthorized: true,
+requestCert: true,
+agent: false,
+strictSSL: false,
 };
 const httpServer = require('http').createServer();
 const httpsServer = require('https');//A bassic http server to be used with socket.io
@@ -192,6 +196,11 @@ io.on("connection", socket => {
 });
 
 
-https.createServer(options, app).listen(DEFAULT_PORT);
+httpsServer.createServer(options, app).listen(DEFAULT_PORT, () =>{
+  console.log("listening on port "+ DEFAULT_PORT);
+  /*mysql_func.runSql("SELECT * FROM langues",function(results){
+      console.log(results);
+  })*/
+});
 
 httpServer.listen(3000);

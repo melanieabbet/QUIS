@@ -1,7 +1,13 @@
 const express = require('express'); //A framework for web application
-const httpServer = require('http').createServer();//A bassic http server to be used with socket.io
+const fs = require('fs');
+const options = {
+key: fs.readFileSync("./keys/private_key.txt"),
+cert: fs.readFileSync("/keys/Certificate.txt")
+};
+const httpServer = require('http').createServer();
+const httpsServer = require('https');//A bassic http server to be used with socket.io
 const io = require('socket.io')(httpServer);//the socket framework to enable RTC over http connection
-const DEFAULT_PORT = 80
+const DEFAULT_PORT = 443
 const io_func = require('./Scripts/socket.io.js');
 const mysql_func = require('./Scripts/mysql.js');
 var app = express();
@@ -186,14 +192,6 @@ io.on("connection", socket => {
 });
 
 
-
-app.listen(DEFAULT_PORT, () =>{
-  console.log("listening on port "+ DEFAULT_PORT);
-  /*mysql_func.runSql("SELECT * FROM langues",function(results){
-      console.log(results);
-  })*/
-  }
-);
-
+https.createServer(options, app).listen(DEFAULT_PORT);
 
 httpServer.listen(3000);

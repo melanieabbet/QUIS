@@ -2,7 +2,7 @@ const express = require('express'); //A framework for web application
 const fs = require('fs');
 const options = {
 key: fs.readFileSync("./keys/private_key.txt"),
-cert: fs.readFileSync("/keys/Certificate.txt")
+cert: fs.readFileSync("./keys/Certificate.txt")
 };
 const httpServer = require('http').createServer();
 const httpsServer = require('https');//A bassic http server to be used with socket.io

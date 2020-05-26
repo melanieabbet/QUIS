@@ -1,17 +1,16 @@
 const express = require('express'); //A framework for web application
 const fs = require('fs');
 const options = {
-cert: fs.readFileSync("./keys/Certificate-pub.txt"),
-ca: fs.readFileSync("./keys/CertificateChain-pub.txt"),
-rejectUnauthorized: true,
-requestCert: true,
-agent: false,
-strictSSL: false,
+cert: fs.readFileSync("./keys/Certificate.txt"),
+ca : fs.readFileSync("./keys/Certificate_chain.txt"),
+key:  fs.readFileSync("./keys/private_key.txt"),
+passphrase: "Melanie_2"
 };
-const httpServer = require('http').createServer();
+const httpServer = require('http');
 const httpsServer = require('https');//A bassic http server to be used with socket.io
-const io = require('socket.io')(httpServer);//the socket framework to enable RTC over http connection
-const DEFAULT_PORT = 443
+const socketHttpServer = httpServer.createServer();
+const io = require('socket.io')(socketHttpServer);
+const DEFAULT_PORT = 80
 const io_func = require('./Scripts/socket.io.js');
 const mysql_func = require('./Scripts/mysql.js');
 var app = express();
@@ -48,6 +47,7 @@ io.on("connection", socket => {
   });
   //Step 1: Insert into waiting queue
   socket.on('RequestRegister', (data) => {
+    console.log(data);
     var sql_check_username = "select count(*) from user where username='"+data.username+"'";
     mysql_func.runSql(sql_check_username,function(result_user_check){
       var sql_insert ="";
@@ -195,12 +195,11 @@ io.on("connection", socket => {
   });
 });
 
-
-httpsServer.createServer(options, app).listen(DEFAULT_PORT, () =>{
+app.listen(DEFAULT_PORT, () =>{
   console.log("listening on port "+ DEFAULT_PORT);
   /*mysql_func.runSql("SELECT * FROM langues",function(results){
       console.log(results);
   })*/
 });
 
-httpServer.listen(3000);
+socketHttpServer.listen(3000);

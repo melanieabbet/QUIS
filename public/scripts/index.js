@@ -229,6 +229,9 @@ function sendVideo(){
 
 }
 
+$("#main-div").hide();
+$("#current-location").hide();
+
 function showdialogue(){
   $("#validate-div").hide();
   $("#replay-div-holder").show();

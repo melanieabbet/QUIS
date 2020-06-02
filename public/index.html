@@ -73,6 +73,19 @@
      </header>
      <span id="error"></span>
      <h1>QUIS?</h1>
+     <div id="warning">
+       <div class="closebutton" id="close" role="alert">X</div>
+       <h2>Instruction</h2>
+       <p>This game is optimized for google chrome. In order to play I kindly ask you to follow the next steps. <br/>
+         1. Switch for google chrome navigator. <br/>
+         2. Open this <a href="#" id="liensecure">link</a> in a new window. <br/>
+         3. Copie the QUIS URL in the field as demonstrate on the picture. http://quisetia.ch
+         4. Switch to enable
+         5. Relauch at the bottom, and refresh quisetia.ch
+         6. Close this window, you are ready to go. From now on you can always skip thoses instructions
+       </p>
+       <img src="/Tutorial.png" alt="" id="tuto">
+     </div>
      <div id="current-location">
        <div class="alert alert-danger location-badge non-current-badge" id="badge-1" role="alert">1</div>
        <div style="display:table-cell;"><hr class="new1"/></div>
@@ -123,7 +136,7 @@
      <button type="button" class="btn btn-danger" id="username-ok-holder" onclick="selectName()">OK</button>
     </div>
     <div id="image-holder">
-    <img src="/Mascot_A.png"  type="image/svg+xml" id="image-bg"/>
+    <img src="/Mascot_A.png" id="image-bg"/>
     <button type="button" class="btn btn-danger" id="play-button" onclick="play()">Play</button>
    </div>
      <div class="right-side">

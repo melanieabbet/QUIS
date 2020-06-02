@@ -1,6 +1,4 @@
-body {
-  background-color: #f6f6f6!important;
-}
+
 
 .video-container {
  display: table-cell;
@@ -9,10 +7,10 @@ body {
 .local-c{
   border-left: none;
 }
-#remote-video {
+#remote-vidseo {
  background-color: #fff;
 }
-#local-video {
+#local-video ss{
  background-color: #fff;
 }
 #input-control{

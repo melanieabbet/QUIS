@@ -131,7 +131,7 @@ body {
 hr.new1 {
    border-top: 1px solid red;
    line-height: 100px;
-   width: 500px;
+   width: 560px;
 }
 #alert_bad_language{
   width: auto;
@@ -141,10 +141,12 @@ hr.new1 {
   display: none;
 }
 #image-bg{
-  max-height: 430px;
+  max-height: 25vw;
   display: table-row;
   display: flex;
   align-content: center;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+   filter:drop-shadow(5px 5px 5px #222);
 }
 #image-holder button{
   margin-top: 50px;

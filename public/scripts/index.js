@@ -231,8 +231,10 @@ function sendVideo(){
 
 $("#main-div").hide();
 $("#current-location").hide();
- function closeandplay(){
 
+document.getElementById("close").addEventListener("click", closeandplay);
+
+ function closeandplay(){
    $("#warning").hide();
    $("#main-div").show();
    $("#current-location").show();

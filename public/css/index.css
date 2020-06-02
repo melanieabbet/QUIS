@@ -67,8 +67,7 @@ padding-top: 0.4%;
   margin-bottom:20px;
 }
 #nav-bar{
-  height: 75px;
-  background-color: #e40b1f!important
+    background-color: #FDEDE8!important;
 }
 #one-Label{
 }
@@ -210,7 +209,8 @@ hr.new1 {
 }
 .container h1{
   text-align: center;
-  margin-top: 100px;
+margin-top: -0.5vw;
+margin-bottom: 3vw;
 }
 .div-hidden{
  display: none;
@@ -241,21 +241,20 @@ hr.new1 {
     margin-bottom: 20px;
 }
 .about{
-  margin-top: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: white;
   font-size: 20px;
-  border-bottom-left-radius: 75px;
-  border-bottom-right-radius: 75px;
-  width: 150px;
-  height: 75px;
+  border-radius: 75px;
+  width: 6vw;
+  height: 6vw;
   right: 0;
-  margin-right: 50px;
+  margin-right: 4vw;
+  margin-top: 2vw;
   position: absolute;
-  background-color: #e40b1f;
+  background-color:white;
 }
 #searching-div{
   display: flex;

@@ -75,7 +75,7 @@ socket.on('messageServeur', (data) => {
       //do something here
       switch(stream.data.type){
         case "verification_message":
-          var response = word_recieved.word.Mot_FR==stream.data.text || word_recieved.word.Mot_IT==stream.data.text || word_recieved.word.Mot_DE==stream.data.text;
+          var response = word_recieved.word.Mot_FR.toLowerCase()==stream.data.text.toLowerCase() || word_recieved.word.Mot_IT.toLowerCase()==stream.data.text.toLowerCase() || word_recieved.word.Mot_DE.toLowerCase()==stream.data.text.toLowerCase();
           socket.emit(joint_channel, {data:{ username:getCookie("username"), word:word_recieved.word,image:word_recieved.word.image,response:response, type:"verification_response" }});
           validated_remote = response;
           if(validated_remote){

@@ -231,6 +231,13 @@ function sendVideo(){
 
 $("#main-div").hide();
 $("#current-location").hide();
+ function closeandplay(){
+
+   $("#warning").hide();
+   $("#main-div").show();
+   $("#current-location").show();
+
+ }
 
 function showdialogue(){
   $("#validate-div").hide();

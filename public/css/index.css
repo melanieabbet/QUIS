@@ -8,25 +8,29 @@ body {
   padding: 30px;
 }
 #close {
-    width: 4.3%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: #e41521;
-    color: white;
-    display: inline-block;
-    text-align: center;
-    border-radius: 100px;
-    cursor: pointer;
+  width: 3.5vw;
+padding-top: 1vw;
+padding-bottom: 1vw;
+background-color: #e41521;
+color: #f8f9fa;
+font-size: 1vw;
+display: inline-block;
+text-align: center;
+border-radius: 100px;
+cursor: pointer;
+margin-top: -1vw;
+margin-left: -1vw;
 }
 #parainstu {
   box-sizing: border-box;
-  margin-bottom: 2rem;
-  margin-left: 6%;
-  margin-top: 2vw;
-  display: inline-block;
-  width: 40%;
+      margin-bottom: 2rem;
+      padding-left: 4%;
+      margin-top: 1.5vw;
+      display: inline-block;
+      width: 45%;
+    
 }
- #instru{
+#instru{
 box-sizing: border-box;
 align-content: center;
 font-size: 2rem;
@@ -38,17 +42,19 @@ padding: 0;
 display: inline-block;
 vertical-align: top;
 padding-top: 0.4%;
+color: white
 
  }
 #tuto{
-box-sizing: border-box;
-width: 50%;
-display: inline-block;
-margin-top: 2vw;
-padding: 2vw;
-border: 1px solid #e41521;
-vertical-align: top;
-filter:drop-shadow(3px 3px 3px #d3d3d3);
+  box-sizing: border-box;
+      width: 50%;
+      display: inline-block;
+      margin-top: 1.5vw;
+      margin-left: 1vw;
+      padding: 2vw;
+      border: 1px solid #e41521;
+      vertical-align: top;
+      filter: drop-shadow(3px 3px 3px #d3d3d3);
 }
 
 .video-container {

@@ -2,6 +2,17 @@ body {
   background-color: #FDEDE8!important;
 }
 
+#warning{
+  max-width: 600px;
+}
+#close{
+  max-width: 600px;
+}
+
+#tuto{
+  max-width: 600px;
+}
+
 .video-container {
  display: table-cell;
  margin-bottom:20px;

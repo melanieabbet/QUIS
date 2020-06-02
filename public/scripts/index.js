@@ -111,7 +111,7 @@ socket.on('messageServeur', (data) => {
             $("#local-post").html(word_text);
             validated_local = true;
           }else{
-            alert("NOOB");
+            alert("Your answer is wrong! Ask perhaps your partner for the right spelling.");
           }
         break;
         case "restart_message":

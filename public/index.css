@@ -1,3 +1,7 @@
+body {
+  background-color: #f6f6f6;
+}
+
 .video-container {
  display: table-cell;
  margin-bottom:20px;
@@ -42,6 +46,7 @@
     text-align: center;
     color: white;
     line-height:30px;
+    padding-top: 15px;
 }
 .non-current-badge{
   background-color: #ffffff;
@@ -128,6 +133,7 @@ hr.new1 {
    border-top: 1px solid red;
    line-height: 100px;
    width: 500px;
+   margin-top: 2em;
 }
 #alert_bad_language{
   width: auto;
@@ -137,7 +143,7 @@ hr.new1 {
   display: none;
 }
 #image-bg{
-  max-height: 430px;
+  max-height: 25vw;
   display: table-row;
   display: flex;
   align-content: center;
@@ -153,7 +159,7 @@ hr.new1 {
 }
 .container h1{
   text-align: center;
-  margin-top: 100px;
+  margin-top: 6vw;
 }
 .div-hidden{
  display: none;
